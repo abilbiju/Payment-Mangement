@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payment App</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <script src="https://cdn.jsdelivr.net/npm/qrcode/build/qrcode.min.js"></script>
+    <style>
+        #selected-items-table {
+            width: 80%;
+            margin: 20px auto;
+            border-collapse: collapse;
+        }
+        #selected-items-table th, #selected-items-table td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: center;
+        }
+        #selected-items-table th {
+            background-color: #f2f2f2;
+        }
+        .quantity-controls {
+            display: flex;
+            align-items: center;
+        }
+        .quantity-controls input {
+            width: 50px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Payment App</h1>
+        <nav>
+            <a href="{{ url_for('admin') }}">Admin Page</a>
+        </nav>
+    </header>
+    <form id="item-selection-form">
+        <label for="item-select">Choose an item:</label>
+        <select id="item-select" name="item-select" onchange="updateSelectedItem()">
+            <option value="" disabled selected>Select an item</option>
+            {% for item in items %}
+            <option value="{{ item.name }}" data-price="{{ item.price }}">{{ item.name }} - Rs{{ item.price }}</option>
+            {% endfor %}
+        </select>
+        <label for="item-quantity">Quantity:</label>
+        <div class="quantity-controls">
+            <button type="button" onclick="decrementQuantity()">-</button>
+            <input type="number" id="item-quantity" name="item-quantity" min="1" value="1">
+            <button type="button" onclick="incrementQuantity()">+</button>
+        </div>
+        <button type="button" onclick="addItem()">Add Item</button>
+    </form>
+    <table id="selected-items-table">
+        <thead>
+            <tr>
+                <th>Item Name</th>
+                <th>Quantity</th>
+                <th>Per Unit Cost</th>
+                <th>Amount</th>
+            </tr>
+        </thead>
+        <tbody>
+        </tbody>
+    </table>
+    <div id="qrcode"></div>
+    <form id="confirm-payment-form" method="POST" action="/confirm_payment">
+        <input type="hidden" name="items" id="items">
+        <input type="hidden" name="quantities" id="quantities">
+        <input type="hidden" name="amounts" id="amounts">
+        <button type="submit">Confirm Payment</button>
+    </form>
+
+    <script>
+        function updateSelectedItem() {
+    const selectElement = document.getElementById('item-select');
+    const selectedItem = selectElement.options[selectElement.selectedIndex];
+    const itemName = selectedItem.value;
+    const itemPrice = selectedItem.getAttribute('data-price');
+    document.getElementById('item_name').value = itemName;
+    document.getElementById('amount').value = itemPrice;
+}
+
+        function incrementQuantity() {
+            const quantityInput = document.getElementById('item-quantity');
+            quantityInput.value = parseInt(quantityInput.value) + 1;
+        }
+
+        function decrementQuantity() {
+            const quantityInput = document.getElementById('item-quantity');
+            if (quantityInput.value > 1) {
+                quantityInput.value = parseInt(quantityInput.value) - 1;
+            }
+        }
+
+        function addItem() {
+            const itemSelect = document.getElementById('item-select');
+            const itemQuantity = document.getElementById('item-quantity').value;
+            const itemName = itemSelect.options[itemSelect.selectedIndex].value;
+            const itemPrice = itemSelect.options[itemSelect.selectedIndex].getAttribute('data-price');
+            const itemAmount = itemQuantity * itemPrice;
+
+            const table = document.getElementById('selected-items-table').getElementsByTagName('tbody')[0];
+            const newRow = table.insertRow();
+            newRow.innerHTML = `<td>${itemName}</td><td>${itemQuantity}</td><td>${itemPrice}</td><td>${itemAmount}</td>`;
+
+            const items = document.getElementById('items');
+            const quantities = document.getElementById('quantities');
+            const amounts = document.getElementById('amounts');
+
+            items.value += `${itemName},`;
+            quantities.value += `${itemQuantity},`;
+            amounts.value += `${itemAmount},`;
+        }
+    </script>
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
