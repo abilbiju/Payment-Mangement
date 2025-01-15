@@ -1,0 +1,13 @@
+{
+  "type": "service_account",
+  "project_id": "sturdy-magnet-438213-h5",
+  "private_key_id": "d2694925817e9bc1c12754ce46c10ecf9a94e5e6",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvgIBADANBgkqhkiG9w0BAQEFAASCBKgwggSkAgEAAoIBAQC39S9jeWRoCnNh\nxYi5PdocE3LN30QSQHFIQBDweCfl56z04DBgLHkTn/NiBMdqs/keZnBntAHikj/K\nqbBR76S4SIFVgA8Goei16Jzr4ZKZnt0L8+cLTF3UCmAAEKeN1Webb4RqfqBO/DBw\n015rZ37QIT5CI+ZhCshf0MzPnwV3EMpzroMfmOoXFHKH7YKDWytWY0KZg9Z6svPD\nptcSjj5c3fzMZg/Sa4Mvz29xYufDkIWz1ohmv008Cnlk9hDZ3qjGjfmMHzvmMA20\nO5eeIPgxuyMs6VCCZHJBSOSjFIa84J0Vj8GG8yBB/8KpSMh3vVKMaQwScuUGd5/r\nNX+frOIHAgMBAAECggEAEueYkiF0hxij2OVi8p5/nqkFAFE0fqeuvJ0Q4JWIjCDt\n7lBnyEppuvGSIn2ZPMb4D/65CH9APleHRL2BiDoXdHTHDdFWOflDoAYisj8BQNZJ\noyPSl5+meNcEHJ2ZioLm3dttAUC4GsXh+IZQSrtdFeiErGliEJD6HJappaCTADRF\ntF2x/yZ80D6ZiY/YzR8abNBB1Pjz4tlyEeudapy12KkbWieeF8BgbuAcqzWJHdEA\nSJhxdoKXhAi3c/cOxTNN344ay8MFvfqPZnitnQ7R3CJqcdJJAsc4SSMIg/UL958p\neHy2lVt4IDizJkPNqFNpBFvZbJUb9hCPRgP7iSv/iQKBgQDwQDI4PYn/wsB/Tu59\nk3npD1UmrNCD2a1HrPcdWNXiTFMSFl9BEYqgTGXtx/BX6SevrtdM7Ono9q7FDqxF\nMsE2+csjpSew0YdZvO83A1DchpwR1Avq21m3atrj1GimIaH4an0ZhuzrdW7smUsW\n35xvQxzDHlm/EC3TxXPfINE3XQKBgQDEBEym1gdQjK5/x2gQ8xOQWqR93mD1qcB/\nEgXrliM6OKU4NExbdDGTSPSHH4m8Y1GIJsxyvqsVyy8ZiGeRVcUbBwgnNiZG49eX\n6cN/q1S6vmHUe8TF0P8iXUdIpbZ8MhClq3vng0WqTQwqcmbVW2xdCtocKS2w9Z9O\n1+a9/FkcswKBgQDh7KyNIKmt/rlAvrwdENsapFWByg9HfiKp/Whgi5KOfRG9N5aZ\nvOIsvcs4YMWOFe5BElzatQt+DMPrAVJUvFbf2OUDfyKk71SlubsGc7LNvjPzvAD8\n+QsUJYLzrmI+n/ANiC5eG/idr1ABZGItf1g/dNAOWHMy7gb6V3sQP28e7QKBgHJq\nSAvCNnbQBzNSw+3Q1QSXxBgsa9A5i8EgVhBTjLB5TAdoj4F6a02bchBFWnJ6Tqb4\nbrIzlU2dUhrHQhzVQb4q9plcxC7w43Eq5BBrg4OViSksLYmCGsqGRAulnsUTvB/X\n3vUd7NYhLw6/xEKZoMEWioWRi7gVRy4QXAFdgO59AoGBAMlbQrV5txL9QKP7LEQX\naaObCZoi7PGnAezqs1zzk1tpaYVggld87v+0I3cx4W/woXIfN/9/vkeXMFDRrtg5\nc0Z34zZ99NrhS0HK1VMkwMV2uceXu7mfzr4UokQJeMT/e81kuW5zzt1QBTGbOU01\niD79A8QZ8eY+86FdTLKReYSD\n-----END PRIVATE KEY-----\n",
+  "client_email": "gsheets@sturdy-magnet-438213-h5.iam.gserviceaccount.com",
+  "client_id": "111345420709285547073",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/gsheets%40sturdy-magnet-438213-h5.iam.gserviceaccount.com",
+  "universe_domain": "googleapis.com"
+}
